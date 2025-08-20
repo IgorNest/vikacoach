@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сайт-визитка | Виктория Нестерова</title>
+    <!-- Подключение Tailwind CSS через CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header Section -->
+    <header class="bg-indigo-700 text-white shadow-lg">
+        <div class="container mx-auto px-4 py-6 flex flex-col sm:flex-row justify-between items-center">
+            <h1 class="text-3xl font-bold">Виктория Нестерова. Коуч для жизни</h1>
+            <p class="text-lg mt-2 sm:mt-0">ICF-коуч и тимлид аналитиков в IT</p>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative bg-white text-center py-20 px-4 md:py-32 overflow-hidden">
+        <div class="absolute inset-0 z-0 bg-indigo-100 opacity-50"></div>
+        <div class="relative z-10 max-w-4xl mx-auto">
+            <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight mb-4">
+                Найдите свой внутренний компас
+            </h2>
+            <p class="text-lg md:text-xl text-gray-600 mb-8">
+                Если вы вроде всё делаете правильно, но чувствуете, что что-то не так — кажется, мы на одной волне. Я помогу остановиться и понять, туда ли вы идёте.
+            </p>
+            <a href="#contact" class="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105 shadow-lg">
+                Записаться на консультацию
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="container mx-auto px-4 py-16">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div class="order-2 md:order-1">
+                <h2 class="text-3xl font-bold text-indigo-700 mb-4">Обо мне</h2>
+                <p class="text-gray-600 mb-4">
+                    Привет! Меня зовут Виктория, я ICF-коуч с дипломом и тимлид аналитиков в IT. Люблю работать с вопросами, на которые не всегда есть быстрые ответы. Эмигрировала 3 года назад с мужем и сыном и почти вышла из выгорания.
+                </p>
+                <p class="text-gray-600">
+                    В рабочее время я разбираюсь в данных и гипотезах. А в свободное — в людях, мотивации, выгорании, росте и внутреннем компасе. Своём и моих клиентов. В своей работе я использую коучинг для жизни: без давления, с легкой иронией, с вопросами, которые помогают остановиться и понять, а вы вообще туда идёте?
+                </p>
+            </div>
+            <div class="order-1 md:order-2 flex justify-center">
+                <!-- Image of a person in a vest -->
+                <img src="photo_2025-08-19 23.22.53.jpeg" alt="Фотография Виктории" class="rounded-full w-48 h-48 sm:w-64 sm:h-64 object-cover shadow-xl">
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="bg-white container mx-auto px-4 py-16">
+        <h2 class="text-3xl font-bold text-center text-indigo-700 mb-10">Направления работы</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- Service 1 -->
+            <div class="bg-gray-100 p-6 rounded-xl shadow-md transform transition duration-300 hover:scale-105">
+                <h3 class="text-xl font-semibold text-indigo-600 mb-3">Взросление и перемены</h3>
+                <p class="text-gray-600">
+                    Прохождение кризисов, в том числе карьерных. Помощь в адаптации к новым жизненным обстоятельствам.
+                </p>
+            </div>
+            <!-- Service 2 -->
+            <div class="bg-gray-100 p-6 rounded-xl shadow-md transform transition duration-300 hover:scale-105">
+                <h3 class="text-xl font-semibold text-indigo-600 mb-3">Баланс и ментальное восстановление</h3>
+                <p class="text-gray-600">
+                    Работа с выгоранием и поиск ресурсов для восстановления внутренней гармонии и энергии.
+                </p>
+            </div>
+            <!-- Service 3 -->
+            <div class="bg-gray-100 p-6 rounded-xl shadow-md transform transition duration-300 hover:scale-105">
+                <h3 class="text-xl font-semibold text-indigo-600 mb-3">Soft Skills и ценности</h3>
+                <p class="text-gray-600">
+                    Развитие навыков, самоощущения и поиск своих истинных ценностей.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prices Section -->
+    <section id="prices" class="container mx-auto px-4 py-16 bg-white rounded-xl shadow-lg">
+        <h2 class="text-3xl font-bold text-center text-indigo-700 mb-10">Стоимость сессий</h2>
+        <div class="grid md:grid-cols-3 gap-8 text-center">
+            <div class="bg-gray-100 p-6 rounded-xl shadow-md transform transition duration-300 hover:scale-105">
+                <h3 class="text-2xl font-bold text-indigo-600 mb-2">Пакет</h3>
+                <p class="text-3xl font-bold text-gray-800 mb-4">2000р / 25$</p>
+                <p class="text-gray-600">за 1 сессию (при покупке пакета из 5 встреч)</p>
+            </div>
+            <div class="bg-gray-100 p-6 rounded-xl shadow-md transform transition duration-300 hover:scale-105">
+                <h3 class="text-2xl font-bold text-indigo-600 mb-2">Разово</h3>
+                <p class="text-3xl font-bold text-gray-800 mb-4">2500р / 30$</p>
+                <p class="text-gray-600">за одну сессию (50 минут)</p>
+            </div>
+            <div class="bg-gray-100 p-6 rounded-xl shadow-md transform transition duration-300 hover:scale-105">
+                <h3 class="text-2xl font-bold text-indigo-600 mb-2">Стратсессия</h3>
+                <p class="text-3xl font-bold text-gray-800 mb-4">10000р / 125$</p>
+                <p class="text-gray-600">глубокая работа над стратегией</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="container mx-auto px-4 py-16">
+        <div class="max-w-xl mx-auto text-center">
+            <h2 class="text-3xl font-bold text-indigo-700 mb-4">Свяжитесь со мной</h2>
+            <p class="text-gray-600 mb-8">
+                Чтобы записаться на сессию или задать вопрос, напишите мне в Telegram или Instagram. Вы также можете следить за моими публикациями в Telegram-канале.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6 mb-8">
+                <a href="https://t.me/mazarty" target="_blank" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-6 rounded-full transition duration-300 shadow-md">
+                    Запись Telegram
+                </a>
+                <a href="https://t.me/vikipedia_coach" target="_blank" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-6 rounded-full transition duration-300 shadow-md">
+                    Telegram-канал
+                </a>
+                <a href="https://www.instagram.com/victory.nesterova.coach" target="_blank" class="bg-pink-500 hover:bg-pink-600 text-white font-semibold py-2 px-6 rounded-full transition duration-300 shadow-md">
+                    Instagram
+                </a>
+            </div>
+
+            <form id="contact-form" class="space-y-6">
+                <div>
+                    <input type="text" id="name" name="name" placeholder="Ваше имя" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500">
+                </div>
+                <div>
+                    <input type="email" id="email" name="email" placeholder="Ваш Email" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500">
+                </div>
+                <div>
+                    <textarea id="message" name="message" rows="4" placeholder="Ваше сообщение..." required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 rounded-lg transition duration-300 transform hover:scale-105 shadow-lg">
+                    Отправить
+                </button>
+            </form>
+
+            <!-- Message box to display success/error messages -->
+            <div id="message-box" class="mt-4 p-4 rounded-lg hidden"></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-300 py-6 text-center">
+        <div class="container mx-auto px-4">
+            <p>&copy; 2025 Виктория. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for form submission handling
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('contact-form');
+            const messageBox = document.getElementById('message-box');
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault(); // Prevent default form submission
+
+                // In a real application, you would send this data to a server.
+                // For this example, we'll just simulate a success message.
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const message = document.getElementById('message').value;
+
+                // Simple validation
+                if (name && email && message) {
+                    // Simulate successful submission
+                    messageBox.textContent = 'Ваше сообщение успешно отправлено! Я скоро с вами свяжусь.';
+                    messageBox.classList.remove('bg-red-100', 'text-red-700', 'hidden');
+                    messageBox.classList.add('bg-green-100', 'text-green-700', 'block');
+                    form.reset(); // Clear the form
+                } else {
+                    // Display error message
+                    messageBox.textContent = 'Пожалуйста, заполните все поля формы.';
+                    messageBox.classList.remove('bg-green-100', 'text-green-700', 'hidden');
+                    messageBox.classList.add('bg-red-100', 'text-red-700', 'block');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
