@@ -95,6 +95,7 @@
             </div>
             <div class="order-1 md:order-2 flex justify-center animate-on-scroll animate-fade-in-right">
                 <!-- Image of a person in a vest -->
+                <!-- Please replace the image path with your actual image filename -->
                 <img src="photo_2025-08-19 23.22.53.jpeg" alt="Фотография Виктории" class="rounded-full w-48 h-48 sm:w-64 sm:h-64 object-cover shadow-xl">
             </div>
         </div>
@@ -152,14 +153,30 @@
 
     <!-- Contact Section -->
     <section id="contact" class="container mx-auto px-4 py-16">
-        <div class="max-w-xl mx-auto text-center animate-on-scroll animate-fade-in-up">
-            <h2 class="text-3xl font-bold text-indigo-700 mb-4">Свяжитесь со мной</h2>
+        <!-- Увеличен максимальную ширину контейнера до max-w-4xl, чтобы iframe был шире -->
+        <div class="max-w-4xl mx-auto text-center animate-on-scroll animate-fade-in-up">
+            <h2 class="text-3xl font-bold text-indigo-700 mb-4">Записаться на сессию</h2>
             <p class="text-gray-600 mb-8">
-                Чтобы записаться на сессию или задать вопрос, напишите мне в Telegram или Instagram. Вы также можете следить за моими публикациями в Telegram-канале.
+                Выберите удобное время в календаре ниже.
             </p>
-            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6 mb-8">
+            <!-- START: Google Calendar Widget -->
+            <div class="w-full h-auto mt-8">
+                <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3x-MysKZA3ccioqKUQzAQLtPJu6UVaG5bzsQyHDuW8PRludxWx3RZJDoB6aJRyaPLjUz7OyewA?embed=true"
+                        style="border: 0; width: 100%; height: 600px; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);" 
+                        frameborder="0"></iframe>
+            </div>
+            <!-- END: Google Calendar Widget -->
+        </div>
+        
+        <!-- Social links are moved outside the main contact block to keep a cleaner layout -->
+        <div class="max-w-xl mx-auto text-center mt-12 animate-on-scroll animate-fade-in-up">
+            <h3 class="text-2xl font-bold text-indigo-700 mb-4">Свяжитесь со мной</h3>
+            <p class="text-gray-600 mb-8">
+                Чтобы задать вопрос или следить за моими публикациями, напишите мне:
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
                 <a href="https://t.me/mazarty" target="_blank" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-6 rounded-full transition duration-300 shadow-md">
-                    Запись Telegram
+                    Telegram
                 </a>
                 <a href="https://t.me/vikipedia_coach" target="_blank" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-6 rounded-full transition duration-300 shadow-md">
                     Telegram-канал
@@ -168,24 +185,6 @@
                     Instagram
                 </a>
             </div>
-
-            <form id="contact-form" class="space-y-6">
-                <div>
-                    <input type="text" id="name" name="name" placeholder="Ваше имя" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500">
-                </div>
-                <div>
-                    <input type="email" id="email" name="email" placeholder="Ваш Email" required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500">
-                </div>
-                <div>
-                    <textarea id="message" name="message" rows="4" placeholder="Ваше сообщение..." required class="w-full p-3 border border-gray-300 rounded-lg focus:ring-indigo-500 focus:border-indigo-500"></textarea>
-                </div>
-                <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 rounded-lg transition duration-300 transform hover:scale-105 shadow-lg">
-                    Отправить
-                </button>
-            </form>
-
-            <!-- Message box to display success/error messages -->
-            <div id="message-box" class="mt-4 p-4 rounded-lg hidden"></div>
         </div>
     </section>
 
@@ -199,36 +198,13 @@
     <script>
         // JavaScript для анимации при скролле с использованием IntersectionObserver
         document.addEventListener('DOMContentLoaded', () => {
-            const form = document.getElementById('contact-form');
-            const messageBox = document.getElementById('message-box');
-
-            // Form submission handling
-            form.addEventListener('submit', (e) => {
-                e.preventDefault(); // Prevent default form submission
-                
-                const name = document.getElementById('name').value;
-                const email = document.getElementById('email').value;
-                const message = document.getElementById('message').value;
-
-                if (name && email && message) {
-                    messageBox.textContent = 'Ваше сообщение успешно отправлено! Я скоро с вами свяжусь.';
-                    messageBox.classList.remove('bg-red-100', 'text-red-700', 'hidden');
-                    messageBox.classList.add('bg-green-100', 'text-green-700', 'block');
-                    form.reset(); // Clear the form
-                } else {
-                    messageBox.textContent = 'Пожалуйста, заполните все поля формы.';
-                    messageBox.classList.remove('bg-green-100', 'text-green-700', 'hidden');
-                    messageBox.classList.add('bg-red-100', 'text-red-700', 'block');
-                }
-            });
-
             // IntersectionObserver setup for scroll animations
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('is-visible');
                         // Stop observing after it becomes visible to prevent re-triggering
-                        observer.unobserve(entry.target); 
+                        observer.unobserve(entry.target);
                     }
                 });
             }, {
