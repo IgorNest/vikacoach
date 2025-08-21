@@ -4,177 +4,56 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Виктория Нестерова. Коуч для жизни</title>
-<!-- Подключение Tailwind CSS через CDN -->
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-/* Базовые стили для тела и шрифтов */
-body {
-  font-family: 'Inter', sans-serif;
-  overflow-x: hidden; /* Предотвращаем горизонтальный скролл при анимациях */
-  margin:0;
-  padding:0;
-}
-
-/* Общий класс для всех анимированных элементов */
-.animate-on-scroll {
-  opacity: 0;
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-  will-change: opacity, transform;
-}
-/* Анимация: появление снизу */
-.animate-fade-in-up {
-  transform: translateY(40px);
-}
-/* Анимация: увеличение */
-.animate-scale-in {
-  transform: scale(0.95);
-}
-/* Класс, который добавляется, когда элемент виден */
-.is-visible {
-  opacity: 1;
-  transform: translate(0,0) scale(1);
-}
-
-/* Стили карточек с улучшенными эффектами при наведении */
-.card {
-  background-color: #f3f4f6; /* bg-gray-100 */
-  border-radius: 1.25rem;
-  padding: 2rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  cursor: pointer;
-  border: 1px solid #e5e7eb;
-}
-.card:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 16px 32px rgba(0,0,0,0.15);
-}
-
-/* Стили кнопок социальных сетей */
-.social-link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.75rem;
-  font-weight: 500;
-  padding: 0.4rem 2rem;
-  border-radius: 9999px;
-  transition: all 0.4s ease-in-out;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-.social-link:hover {
-  transform: translateY(-4px) scale(1.05);
-  box-shadow: 0 12px 24px rgba(0,0,0,0.18);
-  filter: brightness(1.1);
-}
-
-/* Стили главного экрана */
-.hero-content {
-  text-align: center;
-  z-index: 10;
-  padding: 6rem 1rem;
-}
-.hero-bg {
-  /* Уменьшаем минимальную высоту первого экрана */
-  min-height: 55vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  /* Новый фон: белый с полупрозрачным фиолетовым оверлеем */
-  background: white;
-  transition: background 1s ease;
-}
-/* Накладываем оверлей для эффекта bg-indigo-100 */
-.hero-bg::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: 5;
-  background-color: #e0e7ff; /* bg-indigo-100 */
-  opacity: 0.5;
-}
-
-/* Эффект параллакса на секциях */
-.parallax {
-  transition: transform 0.6s ease-out;
-}
-.parallax:hover {
-  transform: translateY(-6px) scale(1.02);
-}
-
-/* Стили для фрейма календаря */
-.calendar-frame {
-  /* Увеличиваем максимальную ширину контейнера */
-  max-width: 1200px;
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-  margin: 0 auto;
-  padding: 1rem;
-}
-.calendar-frame iframe {
-  width: 100%;
-  height: 700px;
-  border: none;
-  border-radius: 12px;
-}
-
-/* Обновленные отступы для прокрутки и плавный переход */
-.section-transition {
-  scroll-margin-top: 6rem;
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-/* Эффект тени для хедера при прокрутке */
-.header-shadow {
-    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-    transition: box-shadow 0.3s ease-in-out;
-}
+body { font-family: 'Inter', sans-serif; overflow-x: hidden; margin:0; padding:0; transition: background 1s ease; }
+.animate-on-scroll { opacity: 0; transition: opacity 0.8s ease-out, transform 0.8s ease-out; will-change: opacity, transform; }
+.animate-fade-in-up { transform: translateY(40px); }
+.animate-scale-in { transform: scale(0.95); }
+.is-visible { opacity: 1; transform: translate(0,0) scale(1); }
+.card { background: linear-gradient(135deg, #ffffff, #f9f9f9); border-radius: 1rem; padding: 1.5rem; box-shadow: 0 2px 6px rgba(0,0,0,0.08); transition: transform 0.5s ease, box-shadow 0.5s ease, background 0.5s ease; cursor: pointer; }
+.card:hover { transform: translateY(-10px) rotateX(3deg) rotateY(3deg) scale(1.03); box-shadow: 0 16px 36px rgba(0,0,0,0.15); background: linear-gradient(135deg, #eef0ff, #dfe0ff); }
+.social-link { display: flex; align-items: center; justify-content: center; gap: 0.5rem; font-weight: 500; padding: 0.5rem 1.5rem; border-radius: 9999px; transition: transform 0.4s ease, box-shadow 0.4s ease, background-color 0.4s ease, color 0.4s ease; }
+.social-link:hover { transform: translateY(-4px) scale(1.08) rotateZ(-1deg); box-shadow: 0 8px 20px rgba(0,0,0,0.12); color: white; }
+.hero-content { text-align: center; z-index: 10; color: white; padding:6rem 1rem; }
+.hero-bg { min-height: 100vh; display: flex; justify-content: center; align-items: center; position: relative; background: linear-gradient(to bottom, rgba(102,126,234,0.9), rgba(118,75,162,0.9)); transition: background 1s ease; }
+.hero-content a:hover { animation: float 1.5s infinite alternate; }
+@keyframes float { 0% { transform: translateY(-3px) scale(1.05); } 100% { transform: translateY(3px) scale(1.05); } }
+.responsive-iframe { position: relative; width: 100%; height: 0; padding-bottom: 75%; }
+.responsive-iframe iframe { position: absolute; top:0; left:0; width:100%; height:100%; border:0; border-radius:12px; box-shadow:0 6px 15px rgba(0,0,0,0.08); }
+.calendar-frame { max-width: 800px; background: white; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.08); margin: 0 auto; }
+.calendar-frame iframe { width: 100%; height: 700px; border: none; border-radius: 12px; }
+.section-transition { scroll-margin-top: 80px; transition: opacity 0.8s ease, transform 0.8s ease; }
+.parallax { transition: transform 0.6s ease-out; }
+.parallax:hover { transform: translateY(-6px) scale(1.02); }
 </style>
 </head>
-<!-- Применяем новый цвет фона ко всему телу документа -->
-<body class="bg-gray-50 text-gray-800">
+<body class="text-gray-800 bg-gradient-to-b from-indigo-50 via-purple-50 to-pink-50">
 
-<header id="main-header" class="bg-white text-gray-800 sticky top-0 z-50 transition-shadow duration-300">
-  <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+<header class="bg-white text-gray-800 shadow-md sticky top-0 z-50">
+  <div class="container mx-auto px-4 py-4 flex flex-col sm:flex-row justify-between items-center">
     <h1 class="text-2xl font-bold">Виктория Нестерова</h1>
-    <div class="sm:hidden">
-      <button id="menu-toggle" class="text-gray-800 focus:outline-none">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                d="M4 6h16M4 12h16M4 18h16"/>
-        </svg>
-      </button>
-    </div>
-    <nav>
-      <ul id="menu" class="hidden sm:flex space-x-6 text-base font-medium">
+    <nav class="mt-2 sm:mt-0">
+      <ul class="flex space-x-4">
         <li><a href="#about" class="hover:text-indigo-600 transition-colors duration-300">Обо мне</a></li>
         <li><a href="#services" class="hover:text-indigo-600 transition-colors duration-300">Направления</a></li>
-        <li class="hidden sm:inline"><a href="#prices" class="hover:text-indigo-600 transition-colors duration-300">Стоимость</a></li>
-        <li class="hidden sm:inline"><a href="#contact" class="hover:text-indigo-600 transition-colors duration-300">Контакты</a></li>
-        <li class="hidden sm:inline"><a href="#faq" class="hover:text-indigo-600 transition-colors duration-300">FAQ</a></li>
+        <li><a href="#prices" class="hover:text-indigo-600 transition-colors duration-300">Стоимость</a></li>
+        <li><a href="#contact" class="hover:text-indigo-600 transition-colors duration-300">Контакты</a></li>
+        <li><a href="#faq" class="hover:text-indigo-600 transition-colors duration-300">FAQ</a></li>
       </ul>
     </nav>
-  </div>
-  <div id="mobile-menu" class="sm:hidden hidden bg-white shadow-md">
-    <ul class="flex flex-col p-4 space-y-2">
-      <li><a href="#prices" class="hover:text-indigo-600 transition-colors duration-300">Стоимость</a></li>
-      <li><a href="#contact" class="hover:text-indigo-600 transition-colors duration-300">Контакты</a></li>
-      <li><a href="#faq" class="hover:text-indigo-600 transition-colors duration-300">FAQ</a></li>
-    </ul>
   </div>
 </header>
 
 <!-- Hero -->
 <section id="hero" class="hero-bg animate-on-scroll animate-fade-in-up section-transition">
-  <div class="relative z-10 hero-content text-gray-800">
+  <div class="hero-content">
     <h2 class="text-4xl md:text-5xl font-extrabold mb-4 leading-tight">Найдите свой внутренний компас</h2>
     <p class="text-lg md:text-xl mb-8 leading-relaxed">Если вы вроде всё делаете правильно, но чувствуете, что что-то не так — кажется, мы на одной волне. Я помогу остановиться и понять, туда ли вы идёте.</p>
-    <a href="#contact" class="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-4 px-10 rounded-full shadow-lg hover:shadow-2xl transition-all duration-300 ease-in-out">Записаться на консультацию</a>
+    <a href="#contact" class="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-8 rounded-full shadow-lg animate-on-scroll animate-scale-in">Записаться на консультацию</a>
   </div>
 </section>
 
@@ -193,7 +72,7 @@ body {
 </section>
 
 <!-- Services -->
-<section id="services" class="bg-white container mx-auto px-4 py-16 rounded-xl shadow-lg services">
+<section id="services" class="bg-white container mx-auto px-4 py-16 services">
   <h2 class="text-3xl font-bold text-center text-indigo-700 mb-10 animate-on-scroll animate-fade-in-up">Направления работы</h2>
   <div class="grid md:grid-cols-3 gap-8">
     <div class="card animate-on-scroll animate-scale-in">
@@ -212,7 +91,7 @@ body {
 </section>
 
 <!-- Prices -->
-<section id="prices" class="bg-white container mx-auto px-4 py-16 rounded-xl shadow-lg prices mt-8">
+<section id="prices" class="container mx-auto px-4 py-16 bg-white rounded-xl shadow-lg prices">
   <h2 class="text-3xl font-bold text-center text-indigo-700 mb-10 animate-on-scroll animate-fade-in-up">Стоимость сессий</h2>
   <div class="grid md:grid-cols-3 gap-8 text-center">
     <div class="card animate-on-scroll animate-fade-in-up">
@@ -235,8 +114,7 @@ body {
 
 <!-- Contact -->
 <section id="contact" class="container mx-auto px-4 py-16">
-  <!-- Увеличиваем ширину контейнера до 7xl, что делает его максимально широким -->
-  <div class="max-w-7xl mx-auto text-center animate-on-scroll animate-fade-in-up">
+  <div class="max-w-4xl mx-auto text-center animate-on-scroll animate-fade-in-up">
     <h2 class="text-3xl font-bold text-indigo-700 mb-4">Записаться на бесплатную вводную сессию</h2>
     <p class="text-gray-600 mb-8">Выберите удобное время в календаре ниже.</p>
     <div class="calendar-frame mt-8">
@@ -245,7 +123,6 @@ body {
   </div>
   <div class="max-w-xl mx-auto text-center mt-12 animate-on-scroll animate-fade-in-up space-y-4">
     <h3 class="text-2xl font-bold text-indigo-700 mb-4">Свяжитесь со мной</h3>
-    <p class="text-gray-600 mb-8">Чтобы задать вопрос или следить за моими публикациями, напишите мне:</p>
     <div class="flex flex-col sm:flex-row justify-center gap-4">
       <a href="https://t.me/mazarty" target="_blank" class="social-link bg-blue-500 text-white hover:bg-blue-600">
         <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/telegram.svg" alt="Telegram" class="w-5 h-5">Telegram
@@ -280,7 +157,7 @@ body {
 </section>
 
 <!-- Footer -->
-<footer class="bg-gray-800 text-gray-300 py-6 text-center">
+<footer class="bg-gray-100 text-gray-800 py-6 text-center">
   <div class="container mx-auto px-4">
     <p>&copy; 2025 Виктория. Все права защищены.</p>
   </div>
@@ -297,25 +174,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }, { threshold: 0.1 });
   document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
-
-  // Мобильное меню
-  const toggleBtn = document.getElementById('menu-toggle');
-  const mobileMenu = document.getElementById('mobile-menu');
-  toggleBtn.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
-  });
-
-  // Эффект тени для хедера при скролле
-  const header = document.getElementById('main-header');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-      header.classList.add('header-shadow');
-    } else {
-      header.classList.remove('header-shadow');
-    }
-  });
 });
 </script>
-
 </body>
 </html>
