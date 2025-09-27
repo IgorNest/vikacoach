@@ -3,55 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Виктория Нестерова | ICF-коуч для поиска внутреннего компаса</title>
-<meta name="description" content="ICF-коуч Виктория Нестерова поможет найти ваш внутренний компас. Работаю с выгоранием, карьерными кризисами и поиском жизненного баланса. Записаться на бесплатную консультацию.">
-<meta name="keywords" content="коуч, коучинг, ICF коуч, выгорание, карьерный кризис, внутренний компас, личностный рост, баланс жизни">
-<meta name="author" content="Виктория Нестерова">
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://yoursite.com">
-
-<!-- Open Graph для соцсетей -->
-<meta property="og:title" content="Виктория Нестерова | ICF-коуч для поиска внутреннего компаса">
-<meta property="og:description" content="ICF-коуч с опытом в IT. Помогаю найти баланс между работой и жизнью, преодолеть выгорание и найти свой путь.">
-<meta property="og:image" content="https://yoursite.com/photo_2025-09-21 17.23.09.jpeg">
-<meta property="og:url" content="https://yoursite.com">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Виктория Нестерова - Коуч">
-
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Виктория Нестерова | ICF-коуч">
-<meta name="twitter:description" content="ICF-коуч с опытом в IT. Помогаю найти баланс и преодолеть выгорание.">
-<meta name="twitter:image" content="https://yoursite.com/photo_2025-09-21 17.23.09.jpeg">
-
-<!-- Structured Data для Google -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Виктория Нестерова",
-  "jobTitle": "ICF Сертифицированный коуч",
-  "description": "ICF-коуч с дипломом и тимлид аналитиков в IT. Специализируется на работе с выгоранием, карьерными кризисами и поиском жизненного баланса.",
-  "url": "https://yoursite.com",
-  "image": "https://yoursite.com/photo_2025-09-21 17.23.09.jpeg",
-  "sameAs": [
-    "https://t.me/mazarty",
-    "https://t.me/vikipedia_coach",
-    "https://www.instagram.com/victory.nesterova.coach"
-  ],
-  "knowsAbout": ["Коучинг", "Выгорание", "Карьерное консультирование", "Личностный рост"],
-  "offers": {
-    "@type": "Service",
-    "name": "Коуч-сессии",
-    "description": "Индивидуальные коуч-сессии для преодоления кризисов и поиска внутреннего баланса",
-    "provider": {
-      "@type": "Person",
-      "name": "Виктория Нестерова"
-    }
-  }
-}
-</script>
-
+<title>Виктория Нестерова. Коуч для жизни</title>
 <!-- Подключение Tailwind CSS через CDN -->
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -66,61 +18,39 @@ body {
   padding:0;
 }
 
-/* Unified scroll reveal animations */
-.scroll-reveal {
+/* Общий класс для всех анимированных элементов */
+.animate-on-scroll {
   opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  will-change: opacity, transform;
 }
-.scroll-reveal-left {
-  opacity: 0;
-  transform: translateX(-30px);
-  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+/* Анимация: появление снизу */
+.animate-fade-in-up {
+  transform: translateY(40px);
 }
-.scroll-reveal-right {
-  opacity: 0;
-  transform: translateX(30px);
-  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+/* Анимация: увеличение */
+.animate-scale-in {
+  transform: scale(0.95);
 }
-.scroll-reveal.revealed,
-.scroll-reveal-left.revealed,
-.scroll-reveal-right.revealed {
+/* Класс, который добавляется, когда элемент виден */
+.is-visible {
   opacity: 1;
-  transform: translate(0,0);
+  transform: translate(0,0) scale(1);
 }
 
-/* Unified card styles */
+/* Стили карточек с улучшенными эффектами при наведении */
 .card {
-  background: white;
+  background-color: #f3f4f6; /* bg-gray-100 */
   border-radius: 1.25rem;
   padding: 2rem;
-  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.08);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 1px solid rgba(99, 102, 241, 0.1);
-  position: relative;
-  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  cursor: pointer;
+  border: 1px solid #e5e7eb;
 }
-
-.card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, #6366f1, #8b5cf6);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
 .card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 24px rgba(99, 102, 241, 0.15);
-  border-color: rgba(99, 102, 241, 0.2);
-}
-
-.card:hover::before {
-  opacity: 1;
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 16px 32px rgba(0,0,0,0.15);
 }
 
 /* Стили кнопок социальных сетей */
@@ -188,14 +118,33 @@ body {
 }
 
 
-/* Standard spacing and layout */
-.section-spacing {
-  padding: 5rem 1rem;
+/* Улучшенные анимации скролла */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
-
-.container-standard {
-  max-width: 1200px;
-  margin: 0 auto;
+.scroll-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+.scroll-reveal-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.scroll-reveal-left.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+.scroll-reveal-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.scroll-reveal-right.revealed {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 
@@ -271,122 +220,21 @@ body {
   }
 }
 
-/* Unified button styles */
+/* Hover эффекты для кнопок */
 .btn-primary {
-  display: inline-block;
-  font-weight: 600;
-  padding: 1rem 2.5rem;
-  border-radius: 9999px;
-  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  text-decoration: none;
-  border: none;
-  cursor: pointer;
-}
-
-.btn-primary:hover {
-  transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.3);
-}
-
-.btn-primary.btn-white {
-  background: white;
-  color: #4338ca;
-}
-
-.btn-primary.btn-white:hover {
-  background: #f8fafc;
-  color: #3730a3;
-}
-
-.btn-primary.btn-gradient {
-  background: linear-gradient(135deg, #6366f1, #8b5cf6);
-  color: white;
-}
-
-.btn-primary.btn-gradient:hover {
-  background: linear-gradient(135deg, #4f46e5, #7c3aed);
-}
-
-/* Прогресс-бар прокрутки */
-.scroll-progress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 0%;
-  height: 3px;
-  background: linear-gradient(90deg, #6366f1, #8b5cf6);
-  z-index: 9999;
-  transition: width 0.1s ease-out;
-}
-
-/* Кнопка "Наверх" */
-.scroll-to-top {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  width: 50px;
-  height: 50px;
-  background: linear-gradient(135deg, #6366f1, #8b5cf6);
-  border: none;
-  border-radius: 50%;
-  color: white;
-  cursor: pointer;
-  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
-  z-index: 1000;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(20px);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.scroll-to-top.visible {
-  opacity: 1;
-  visibility: visible;
+  background: linear-gradient(45deg, #6366f1, #8b5cf6);
   transform: translateY(0);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-.scroll-to-top:hover {
-  background: linear-gradient(135deg, #4f46e5, #7c3aed);
-  transform: translateY(-5px) scale(1.1);
-  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.4);
-}
-
-.scroll-to-top svg {
-  width: 24px;
-  height: 24px;
-}
-
-/* Адаптивность для мобильных */
-@media (max-width: 768px) {
-  .scroll-to-top {
-    width: 45px;
-    height: 45px;
-    bottom: 20px;
-    right: 20px;
-  }
-  .scroll-to-top svg {
-    width: 20px;
-    height: 20px;
-  }
+.btn-primary:hover {
+  background: linear-gradient(45deg, #4f46e5, #7c3aed);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(99, 102, 241, 0.4);
 }
 </style>
 </head>
 <!-- Применяем новый цвет фона ко всему телу документа -->
 <body class="bg-gray-50 text-gray-800">
-
-<!-- Прогресс-бар прокрутки -->
-<div class="scroll-progress" id="scrollProgress"></div>
-
-<!-- Кнопка "Наверх" -->
-<button class="scroll-to-top" id="scrollToTop" aria-label="Прокрутить наверх">
-  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/>
-  </svg>
-</button>
 
 <header id="main-header" class="bg-white text-gray-800 sticky top-0 z-50 transition-shadow duration-300">
   <div class="container mx-auto px-4 py-4 flex justify-between items-center">
@@ -419,16 +267,16 @@ body {
 </header>
 
 <!-- Hero -->
-<section id="hero" class="hero-bg scroll-reveal section-transition">
+<section id="hero" class="hero-bg animate-on-scroll animate-fade-in-up section-transition">
   <div class="relative z-10 hero-content text-white">
     <h2 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">Найдите свой внутренний компас</h2>
     <p class="text-xl md:text-2xl mb-10 leading-relaxed opacity-90 max-w-3xl mx-auto">Если вы вроде всё делаете правильно, но чувствуете, что что-то не так — кажется, мы на одной волне. Я помогу остановиться и понять, туда ли вы идёте.</p>
-    <a href="#contact" class="btn-primary btn-white">Записаться на консультацию</a>
+    <a href="#contact" class="inline-block bg-white text-indigo-700 hover:bg-indigo-50 font-semibold py-4 px-10 rounded-full shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300 ease-in-out">Записаться на консультацию</a>
   </div>
 </section>
 
 <!-- About -->
-<section id="about" class="container mx-auto px-4 py-20 scroll-reveal section-transition parallax">
+<section id="about" class="container mx-auto px-4 py-16 scroll-reveal section-transition parallax">
   <div class="grid md:grid-cols-2 gap-12 items-center">
     <div class="order-2 md:order-1 scroll-reveal-left">
       <h2 class="text-3xl font-bold text-indigo-700 mb-4">Обо мне</h2>
@@ -442,7 +290,7 @@ body {
 </section>
 
 <!-- Services -->
-<section id="services" class="bg-white container mx-auto px-4 py-20 rounded-xl shadow-lg services scroll-reveal">
+<section id="services" class="bg-white container mx-auto px-4 py-16 rounded-xl shadow-lg services scroll-reveal">
   <h2 class="text-3xl font-bold text-center text-indigo-700 mb-10">Направления работы</h2>
   <div class="grid md:grid-cols-3 gap-8">
     <div class="card scroll-reveal-left">
@@ -466,13 +314,13 @@ body {
     <div class="max-w-3xl mx-auto">
       <h3 class="text-3xl md:text-4xl font-bold text-white text-shadow-lg mb-6">Готовы сделать первый шаг?</h3>
       <p class="text-xl text-white text-shadow mb-10 leading-relaxed">Каждое путешествие к внутренней гармонии начинается с одного разговора</p>
-      <a href="#contact" class="btn-primary btn-white">Начать путешествие</a>
+      <a href="#contact" class="inline-block bg-white text-indigo-700 hover:bg-indigo-50 font-semibold py-4 px-10 rounded-full shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300">Начать путешествие</a>
     </div>
   </div>
 </section>
 
 <!-- Prices -->
-<section id="prices" class="bg-white container mx-auto px-4 py-20 rounded-xl shadow-lg prices mt-8 scroll-reveal">
+<section id="prices" class="bg-white container mx-auto px-4 py-16 rounded-xl shadow-lg prices mt-8 scroll-reveal">
   <h2 class="text-3xl font-bold text-center text-indigo-700 mb-10">Стоимость сессий</h2>
   <div class="grid md:grid-cols-3 gap-8 text-center">
     <div class="card scroll-reveal-left">
@@ -494,7 +342,7 @@ body {
 </section>
 
 <!-- Contact -->
-<section id="contact" class="container mx-auto px-4 py-20">
+<section id="contact" class="container mx-auto px-4 py-16">
   <!-- Увеличиваем ширину контейнера до 7xl, что делает его максимально широким -->
   <div class="max-w-7xl mx-auto text-center scroll-reveal">
     <h2 class="text-3xl font-bold text-indigo-700 mb-4">Записаться на бесплатную вводную сессию</h2>
@@ -521,7 +369,7 @@ body {
 </section>
 
 <!-- FAQ -->
-<section id="faq" class="bg-white container mx-auto px-4 py-20 rounded-xl shadow-lg faq scroll-reveal">
+<section id="faq" class="bg-white container mx-auto px-4 py-16 faq scroll-reveal">
   <h2 class="text-3xl font-bold text-center text-indigo-700 mb-10">Часто задаваемые вопросы</h2>
   <div class="max-w-3xl mx-auto space-y-6">
     <div class="card scroll-reveal-left">
@@ -548,7 +396,18 @@ body {
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-  // Unified Intersection Observer для всех анимаций
+  // Intersection Observer для старых анимаций
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+
+  // Новый Intersection Observer для scroll-reveal анимаций
   const scrollRevealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -600,45 +459,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
-
-  // Прогресс-бар и кнопка "Наверх"
-  const scrollProgress = document.getElementById('scrollProgress');
-  const scrollToTopButton = document.getElementById('scrollToTop');
-  
-  function updateScrollProgress() {
-    const scrollTop = window.pageYOffset;
-    const docHeight = document.body.scrollHeight - window.innerHeight;
-    const scrollPercent = (scrollTop / docHeight) * 100;
-    
-    if (scrollProgress) {
-      scrollProgress.style.width = scrollPercent + '%';
-    }
-    
-    // Показать/скрыть кнопку "Наверх"
-    if (scrollToTopButton) {
-      if (scrollTop > 300) {
-        scrollToTopButton.classList.add('visible');
-      } else {
-        scrollToTopButton.classList.remove('visible');
-      }
-    }
-  }
-  
-  // Обновляем прогресс-бар при прокрутке
-  window.addEventListener('scroll', updateScrollProgress);
-  
-  // Прокрутка наверх по клику на кнопку
-  if (scrollToTopButton) {
-    scrollToTopButton.addEventListener('click', () => {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    });
-  }
-  
-  // Инициализация
-  updateScrollProgress();
 });
 </script>
 
